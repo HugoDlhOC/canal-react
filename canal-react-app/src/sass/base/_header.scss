@@ -1,0 +1,52 @@
+header {
+  .navigation {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 20px;
+
+    &__title {
+      font-size: 28px;
+      font-family: "Fira Sans", sans-serif;
+      margin-right: 40px;
+    }
+
+    .menu {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      &__item {
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      &__item:hover {
+        animation: changeColor linear 200ms;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    .search_account {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+
+      &__search,
+      &__account {
+        padding: 5px 10px 5px 10px;
+        border: none;
+        background-color: #0d0d0d;
+      }
+    }
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: #ffffff;
+  }
+  100% {
+    color: #ec3655;
+  }
+}

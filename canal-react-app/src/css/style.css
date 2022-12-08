@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600&family=Hind&display=swap");
+body {
+  font-family: "Hind", sans-serif;
+  background-color: #0d0d0d;
+}
+
+body > * {
+  color: #ffffff;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header .navigation {
+  display: flex;
+  flex-direction: row;
+  padding: 15px 20px;
+}
+header .navigation__title {
+  font-size: 28px;
+  font-family: "Fira Sans", sans-serif;
+  margin-right: 40px;
+}
+header .navigation .menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+header .navigation .menu__item {
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+header .navigation .menu__item:hover {
+  animation: changeColor linear 200ms;
+  animation-fill-mode: forwards;
+}
+header .navigation .search_account {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+header .navigation .search_account__search, header .navigation .search_account__account {
+  padding: 5px 10px 5px 10px;
+  border: none;
+  background-color: #0d0d0d;
+}
+
+@keyframes changeColor {
+  0% {
+    color: #ffffff;
+  }
+  100% {
+    color: #ec3655;
+  }
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gallery__image {
+  object-fit: cover;
+  width: 200px;
+  border: 7px black solid;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

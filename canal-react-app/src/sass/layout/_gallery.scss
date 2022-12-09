@@ -1,12 +1,56 @@
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  &__gallery_navigation {
+    display: flex;
+  }
 
-  &__image {
-    object-fit: cover;
-    width: 200px;
-    border: 7px black solid;
-    border-radius: 5px;
-    margin: 5px;
+  .gallery_navigation {
+    &__previous_icon {
+      position: absolute;
+      left: 0;
+      bottom: 50%;
+      z-index: 1;
+    }
+
+    &__next_icon {
+      position: absolute;
+      right: 0;
+      bottom: 50%;
+      z-index: 1;
+    }
+  }
+
+  .images_container {
+    display: flex;
+    transition: all 500ms ease;
+
+    &__image {
+      object-fit: cover;
+      width: 200px;
+      border: 7px rgb(44, 43, 43) solid;
+      border-radius: 5px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    &__image:hover {
+      transform: scale(1);
+      animation: forwards scaleImage 250ms;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes scaleImage {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
   }
 }

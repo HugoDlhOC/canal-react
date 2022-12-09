@@ -4,9 +4,9 @@ import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   return (
     <header>
-      <nav className="navigation">
-        <h1 className="navigation__title">CANAL REACT</h1>
-        <ul className="navigation__menu menu">
+      <nav className="header_navigation">
+        <h1 className="header_navigation__title">CANAL REACT</h1>
+        <ul className="header_navigation__menu menu">
           <li className="menu__item">Accueil</li>
           <li className="menu__item">En direct</li>
           <li className="menu__item">Programme TV</li>

@@ -56,6 +56,9 @@ header .header_navigation .search_account__search, header .header_navigation .se
   border: none;
   background-color: #0d0d0d;
 }
+header .header_navigation .search_account .search__search_link {
+  cursor: pointer;
+}
 
 @keyframes changeColor {
   0% {
@@ -63,6 +66,22 @@ header .header_navigation .search_account__search, header .header_navigation .se
   }
   100% {
     color: #ec3655;
+  }
+}
+@keyframes appearance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes disappearance {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
 .gallery {
@@ -89,14 +108,6 @@ header .header_navigation .search_account__search, header .header_navigation .se
   display: flex;
   transition: all 500ms ease;
 }
-.gallery .images_container__image {
-  object-fit: cover;
-  width: 200px;
-  border: 7px rgb(44, 43, 43) solid;
-  border-radius: 5px;
-  margin: 5px;
-  cursor: pointer;
-}
 .gallery .images_container__image:hover {
   transform: scale(1);
   animation: forwards scaleImage 250ms;
@@ -104,6 +115,15 @@ header .header_navigation .search_account__search, header .header_navigation .se
 
 .hidden {
   display: none;
+}
+
+.images_container__image {
+  object-fit: cover;
+  width: 200px;
+  border: 7px rgb(44, 43, 43) solid;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 @keyframes scaleImage {
@@ -138,11 +158,11 @@ header .header_navigation .search_account__search, header .header_navigation .se
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: #f1f1f1;
   border-radius: 3px;
   max-width: 1200px;
   min-width: 600px;
   position: absolute;
+  background-color: #0d0d0d;
 }
 .modal .modal_content__image,
 .modal__overlay .modal_content__image {
@@ -151,7 +171,7 @@ header .header_navigation .search_account__search, header .header_navigation .se
 .modal .modal_content__title, .modal .modal_content__description,
 .modal__overlay .modal_content__title,
 .modal__overlay .modal_content__description {
-  color: black;
+  color: white;
   padding: 0px 10px;
 }
 .modal .modal_content__title,
@@ -175,10 +195,11 @@ header .header_navigation .search_account__search, header .header_navigation .se
 .modal .modal_content .vote_container,
 .modal__overlay .modal_content .vote_container {
   padding: 0px 10px;
+  background-color: #0d0d0d;
 }
 .modal .modal_content .vote_container__value,
 .modal__overlay .modal_content .vote_container__value {
-  color: black;
+  color: white;
 }
 
 .active_modal {

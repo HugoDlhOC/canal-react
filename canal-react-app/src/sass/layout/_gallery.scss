@@ -26,15 +26,6 @@
     display: flex;
     transition: all 500ms ease;
 
-    &__image {
-      object-fit: cover;
-      width: 200px;
-      border: 7px rgb(44, 43, 43) solid;
-      border-radius: 5px;
-      margin: 5px;
-      cursor: pointer;
-    }
-
     &__image:hover {
       transform: scale(1);
       animation: forwards scaleImage 250ms;
@@ -44,6 +35,15 @@
 
 .hidden {
   display: none;
+}
+
+.images_container__image {
+  object-fit: cover;
+  width: 200px;
+  border: 7px rgb(44, 43, 43) solid;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 @keyframes scaleImage {

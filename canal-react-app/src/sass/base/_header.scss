@@ -39,6 +39,12 @@ header {
         border: none;
         background-color: #0d0d0d;
       }
+
+      .search {
+        &__search_link {
+          cursor: pointer;
+        }
+      }
     }
   }
 }
@@ -49,5 +55,23 @@ header {
   }
   100% {
     color: #ec3655;
+  }
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappearance {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

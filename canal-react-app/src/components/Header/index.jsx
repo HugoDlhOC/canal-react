@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { searchPage } from "../../routes/routes";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header>
       <nav className="header_navigation">
@@ -14,8 +19,13 @@ const Header = () => {
           <li className="menu__item">Mes vidéos</li>
         </ul>
         <div className="navigation__search_account search_account">
-          <button className="search_account__search">
-            <FontAwesomeIcon icon={faSearch} size="2xl" color="white" />
+          <button
+            className="search_account__search search"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <Link to={searchPage} className="search__search_link">
+              <FontAwesomeIcon icon={faSearch} size="2xl" color="white" />
+            </Link>
           </button>
           <button className="search_account__account">
             <FontAwesomeIcon icon={faUserCircle} size="2xl" color="white" />

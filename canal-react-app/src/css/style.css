@@ -1,4 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,600&family=Hind&display=swap");
+.display_block {
+  display: block;
+}
+
+.display_none {
+  display: none;
+}
+
+.display_flex {
+  display: flex;
+}
+
 body {
   font-family: "Hind", sans-serif;
   background-color: #0d0d0d;
@@ -88,6 +100,7 @@ header .header_navigation .search_account .search__search_link {
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
+  animation: apparitionGallery 500ms linear;
 }
 .gallery__gallery_navigation {
   display: flex;
@@ -134,8 +147,17 @@ header .header_navigation .search_account .search__search_link {
     transform: scale(1.05);
   }
 }
+@keyframes apparitionGallery {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .modal {
   z-index: 2;
+  animation: apparitionModal 500ms linear;
 }
 
 .modal,
@@ -204,6 +226,19 @@ header .header_navigation .search_account .search__search_link {
 
 .active_modal {
   overflow-y: hidden;
+}
+
+@keyframes apparitionModal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.results_container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */

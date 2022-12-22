@@ -1,5 +1,6 @@
 .modal {
   z-index: 2;
+  animation: apparitionModal 500ms linear;
 }
 
 .modal,
@@ -67,4 +68,14 @@
 
 .active_modal {
   overflow-y: hidden;
+}
+
+@keyframes apparitionModal {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

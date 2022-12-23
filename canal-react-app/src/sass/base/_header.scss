@@ -1,9 +1,17 @@
 header {
   margin: 0px -50px;
+  z-index: 2;
+
   .header_navigation {
     display: flex;
     flex-direction: row;
     padding: 15px 20px;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
     &__title {
       font-size: 28px;
@@ -20,10 +28,17 @@ header {
         font-size: 16px;
         cursor: pointer;
       }
-      &__item:hover {
+      &__item a:hover {
         animation: changeColor linear 200ms;
         animation-fill-mode: forwards;
       }
+    }
+
+    .header_navigation__icon_menu {
+      margin-left: auto;
+      padding-right: 10px;
+      display: none;
+      cursor: pointer;
     }
 
     .search_account {
@@ -73,5 +88,43 @@ header {
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: $brk_laptop_small) {
+  header {
+    .header_navigation {
+      position: relative;
+      &__menu {
+        display: flex;
+        flex-direction: column;
+        background-color: #0d0d0d;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        left: 0;
+        z-index: -1;
+        transform: translateY(-200%);
+        transition: 500ms;
+      }
+      .header_navigation__icon_menu {
+        display: block;
+        margin-left: auto;
+      }
+      .display_menu {
+        transform: translateY(0px);
+        z-index: 1;
+      }
+
+      .search_account {
+        margin-left: 0px;
+      }
+    }
+  }
+}
+
+@media (max-width: $brk_mobile_large) {
+  header {
+    margin: 0px;
   }
 }

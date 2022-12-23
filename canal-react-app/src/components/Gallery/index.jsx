@@ -32,7 +32,7 @@ const Gallery = ({
   //api key
   const API_KEY = "ade02ea5f909697eb890e5479757edf0";
   let optionalParameterUrlApiCopy;
-  const DATA_LENGTH = 20;
+  const DATA_LENGTH = 200; //number of element display (20 elements for real, but 200 for give more space)
 
   if (optionalParameterUrlApi === undefined) optionalParameterUrlApiCopy = "";
   else optionalParameterUrlApiCopy = optionalParameterUrlApi;
@@ -48,7 +48,7 @@ const Gallery = ({
     );
   }, []);
 
-  const WIDTH_IMAGE = 210;
+  const WIDTH_IMAGE = 200;
   //define MAX_TRANSLATE_X : total translate space
   const MAX_TRANSLATE_X = DATA_LENGTH * WIDTH_IMAGE - 3 * WIDTH_IMAGE;
 

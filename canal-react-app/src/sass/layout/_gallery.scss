@@ -3,6 +3,9 @@
   overflow: hidden;
   margin-bottom: 20px;
   animation: apparitionGallery 500ms linear;
+  max-width: 2200px;
+  margin-right: auto;
+  margin-left: auto;
 
   &__gallery_navigation {
     display: flex;
@@ -65,5 +68,23 @@
 
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: $brk_tablet_medium) {
+  .images_container__image {
+    width: 154px;
+    height: 242px;
+  }
+}
+
+@media (max-width: $brk_mobile_large) {
+  .gallery {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .images_container__image {
+    width: 118px;
+    height: 186px;
   }
 }

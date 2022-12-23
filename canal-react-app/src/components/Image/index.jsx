@@ -1,10 +1,13 @@
 import emptyImage from "../../data/images/empty_image.png";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import CanalContext from "../../context/CanalHomeContext";
+import loadingImage from "../../data/images/loader.png";
 
 const Image = ({ item }) => {
   //if we know already the type of data (movie, tv), we can add this particularity before
   const canalContext = useContext(CanalContext);
+
+  const [loader, setLoader] = useState(false);
 
   let srcImage;
 
@@ -12,13 +15,13 @@ const Image = ({ item }) => {
   if (item.poster_path === null || item.poster_path === undefined) {
     srcImage = emptyImage;
   } else {
-    srcImage = "https://image.tmdb.org/t/p/w780" + item.poster_path;
+    srcImage = "https://image.tmdb.org/t/p/h632" + item.poster_path;
   }
   if (srcImage === emptyImage) {
     if (item.profile_path === null || item.profile_path === undefined) {
       srcImage = emptyImage;
     } else {
-      srcImage = "https://image.tmdb.org/t/p/original" + item.profile_path;
+      srcImage = "https://image.tmdb.org/t/p/w185" + item.profile_path;
     }
   }
 
@@ -44,7 +47,7 @@ const Image = ({ item }) => {
 
       if (content.profile_path !== null) {
         item.backgroundImage =
-          "https://image.tmdb.org/t/p/original" + content.profile_path;
+          "https://image.tmdb.org/t/p/h632" + content.profile_path;
       } else {
         item.backgroundImage = emptyImage;
       }
@@ -98,7 +101,8 @@ const Image = ({ item }) => {
         onClick={() => {
           toggleModal(item);
         }}
-        src={srcImage}
+        src={loader === true ? srcImage : loadingImage}
+        onLoad={() => setLoader(true)}
       />
     </div>
   );

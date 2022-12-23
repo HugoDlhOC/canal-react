@@ -5,12 +5,14 @@ import SearchPage from "./pages/SearchPage";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path={homePage} element={<Home />} />
-        <Route path={searchPage} element={<SearchPage />} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path={homePage} element={<Home />} />
+          <Route path={searchPage} element={<SearchPage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

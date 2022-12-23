@@ -133,6 +133,7 @@ header .header_navigation .search_account .search__search_link {
 .images_container__image {
   object-fit: cover;
   width: 200px;
+  height: 315px;
   border: 7px rgb(44, 43, 43) solid;
   border-radius: 5px;
   margin: 5px;

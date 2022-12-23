@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import emptyImage from "../../data/images/empty_image.png";
 import { apiFunction } from "../../services/callsApi";
 import CanalHomeContext from "../../context/CanalHomeContext";
 import Image from "../Image";
@@ -9,16 +8,14 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Search = () => {
   const API_KEY = "ade02ea5f909697eb890e5479757edf0";
-  const [typeOfSearch, setTypeOfSearch] = useState("multi");
+  const [typeOfSearch, setTypeOfSearch] = useState("movie");
   const urlApi = `search/${typeOfSearch}`;
   const [counter, setCounter] = useState(1);
-  const [inputValue, setInputValue] = useState("undefinedundefined"); //%20 = space keyboard key
+  const [inputValue, setInputValue] = useState("avengers"); //%20 = space keyboard key
   const [startSearch, setStartSearch] = useState(0);
   const optionalParameterUrlApi = `&language=fr&query=${inputValue}&page=${counter}`;
 
   const canalContext = useContext(CanalHomeContext);
-
-  const [loaderSearchResults, setLoaderSearchResults] = useState(false);
 
   //fetch data
   useEffect(() => {
@@ -115,6 +112,7 @@ const Search = () => {
       ) : (
         ""
       )}
+
       {canalContext.modalIsOpen && ( //if modal is true, we display the modal
         <Modal />
       )}
@@ -133,7 +131,6 @@ const Search = () => {
           Page {counter} sur {canalContext.totalPagesResult}
         </span>
         <button
-          className="search_navigation__next_page"
           className={
             counter < canalContext.totalPagesResult
               ? "search_navigation__previous_page"

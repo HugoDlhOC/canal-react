@@ -126,5 +126,11 @@ header {
 @media (max-width: $brk_mobile_large) {
   header {
     margin: 0px;
+
+    .header_navigation {
+      &__title {
+        font-size: 17px;
+      }
+    }
   }
 }

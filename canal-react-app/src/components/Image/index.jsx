@@ -10,6 +10,7 @@ const Image = ({ item }) => {
   const [loader, setLoader] = useState(false);
 
   let srcImage;
+  let altImage;
 
   //good url for movie or acting
   if (item.poster_path === null || item.poster_path === undefined) {
@@ -25,12 +26,20 @@ const Image = ({ item }) => {
     }
   }
 
-  console.log(item);
+  if (item.media_type !== undefined) {
+    if (item.media_type === "movie") {
+      altImage = item.original_title;
+    }
+    if (item.media_type === "tv") {
+      altImage = item.name;
+    }
+  } else if (item.original_title === undefined) {
+    altImage = item.name;
+  } else if (item.name === undefined) {
+    altImage = item.original_title;
+  }
 
   const changeContentModal = (content) => {
-    console.log(content);
-    console.log(canalContext.typeOfData);
-
     let item;
 
     //if typeOfData is person adapt the content
@@ -103,6 +112,7 @@ const Image = ({ item }) => {
         }}
         src={loader === true ? srcImage : loadingImage}
         onLoad={() => setLoader(true)}
+        alt={"miniature de l'oeuvre ou de l'artiste  " + altImage}
       />
     </div>
   );

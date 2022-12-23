@@ -147,6 +147,9 @@ header .header_navigation .search_account .search__search_link {
   header {
     margin: 0px;
   }
+  header .header_navigation__title {
+    font-size: 17px;
+  }
 }
 .gallery {
   position: relative;
@@ -260,7 +263,8 @@ header .header_navigation .search_account .search__search_link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 350px;
+  min-width: 320px;
+  min-height: 400px;
 }
 .modal .modal_content__image,
 .modal__overlay .modal_content__image {
@@ -279,6 +283,8 @@ header .header_navigation .search_account .search__search_link {
 .modal .modal_content__description,
 .modal__overlay .modal_content__description {
   margin-bottom: 10px;
+  max-height: 250px;
+  overflow-y: auto;
 }
 .modal .modal_content__close_button,
 .modal__overlay .modal_content__close_button {
@@ -317,14 +323,72 @@ header .header_navigation .search_account .search__search_link {
     margin: 0px;
   }
   .modal .modal_content__title {
-    font-size: 30px;
+    font-size: 20px;
   }
 }
-.results_container {
+@media (max-height: 600px) {
+  .modal {
+    margin: 0px;
+  }
+  .modal .modal_content {
+    max-height: 400px;
+  }
+}
+.search_container {
+  display: flex;
+  flex-direction: column;
+}
+.search_container__input {
+  outline: none;
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 30px;
+}
+.search_container .search_navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+.search_container .search_navigation__button {
+  font-size: 20px;
+  padding: 5px;
+  outline: none;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+}
+.search_container .search_navigation__previous_page, .search_container .search_navigation__next_page {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0px 10px 0px 10px;
+}
+.search_container .results_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 600px) {
+  .search_container__input {
+    font-size: 20px;
+  }
+  .search_container .search_navigation__button {
+    font-size: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .search_container__input {
+    font-size: 15px;
+  }
+  .search_container .search_navigation__button {
+    font-size: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

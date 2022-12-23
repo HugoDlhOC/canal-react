@@ -17,6 +17,11 @@ const Modal = () => {
         <img
           src={canalContext.contentModal.backgroundImage}
           className="modal_content__image"
+          alt={
+            canalContext.contentModal.title !== undefined
+              ? "poster " + canalContext.contentModal.title
+              : "poster " + canalContext.contentModal.name
+          }
         />
         <p className="modal_content__title">
           {canalContext.typeOfData === "person"

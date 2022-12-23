@@ -56,7 +56,7 @@ const Search = () => {
         setTypeOfSearch("person");
         break;
       default:
-        setTypeOfSearch("multi");
+        setTypeOfSearch("movie");
     }
     canalContext.setTypeOfData(valueTypeOfSearch);
     console.log(canalContext.data);
@@ -70,36 +70,32 @@ const Search = () => {
   }
 
   return (
-    <div className="search_container">
+    <section className="search_container">
       <input
         className="search_container__input"
-        placeholder="Avatar, Lupin ..."
+        placeholder="Avengers, Lupin ..."
         onChange={handleChange}
       />
-      <button
-        className="search_container__button"
-        onClick={() => handleStartSearch("multi")}
-      >
-        Rechercher
-      </button>
-      <button
-        className="search_container__button"
-        onClick={() => handleStartSearch("movie")}
-      >
-        Rechercher un film
-      </button>
-      <button
-        className="search_container__button"
-        onClick={() => handleStartSearch("tv")}
-      >
-        Rechercher une série TV
-      </button>
-      <button
-        className="search_container__button"
-        onClick={() => handleStartSearch("person")}
-      >
-        Rechercher une personne
-      </button>
+      <section className="search_container__search_navigation search_navigation">
+        <button
+          className="search_navigation__button"
+          onClick={() => handleStartSearch("movie")}
+        >
+          Rechercher un film
+        </button>
+        <button
+          className="search_navigation__button"
+          onClick={() => handleStartSearch("tv")}
+        >
+          Rechercher une série TV
+        </button>
+        <button
+          className="search_navigation__button"
+          onClick={() => handleStartSearch("person")}
+        >
+          Rechercher une personne
+        </button>
+      </section>
 
       {canalContext.data !== undefined && canalContext.data.length !== 0 ? (
         <section className="search_container__results_container results_container">
@@ -125,7 +121,7 @@ const Search = () => {
           }
           onClick={() => handleChangePage("previous")}
         >
-          <FontAwesomeIcon icon={faArrowLeft} size="2xl" />
+          <FontAwesomeIcon icon={faArrowLeft} size="2xl" color="white" />
         </button>
         <span>
           Page {counter} sur {canalContext.totalPagesResult}
@@ -133,15 +129,15 @@ const Search = () => {
         <button
           className={
             counter < canalContext.totalPagesResult
-              ? "search_navigation__previous_page"
-              : "search_navigation__previous_page display_none"
+              ? "search_navigation__next_page"
+              : "search_navigation__next_page display_none"
           }
           onClick={() => handleChangePage("next")}
         >
-          <FontAwesomeIcon icon={faArrowRight} size="2xl" />
+          <FontAwesomeIcon icon={faArrowRight} size="2xl" color="white" />
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

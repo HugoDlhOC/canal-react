@@ -43,7 +43,6 @@ const Gallery = ({
       (response) => {
         canalContext.setData(response.results);
         setLoaderGallery(true);
-        console.log(response);
       }
     );
   }, []);
